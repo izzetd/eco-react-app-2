@@ -1,19 +1,45 @@
 {
- "name": "nodetest1-2017",
- "version": "0.0.0",
- "private": true,
- "scripts": {
-  "start": "node ./bin/www"
- },
- "dependencies": {
-  "body-parser": "~1.18.2",
-  "cookie-parser": "~1.4.3",
-  "debug": "~2.6.9",
-  "express": "~4.15.5",
-  "jade": "~1.11.0",
-  "mongodb": "~3.0.1",
-  "monk": "~6.0.5",
-  "morgan": "~1.9.0",
-  "serve-favicon": "~2.4.5"
- }
+  "name": "nodetest1-2017",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server": "node server/bin/www",
+    "client_react": "react-scripts start",
+    "client_webPack": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build_webpack": "webpack --config ./webpack.config.js --mode development",
+    "dev": "concurrently \"npm run server\" \"npm run client_webPack\""
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "~1.18.2",
+    "concurrently": "^4.0.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "kafka-node": "^2.6.1",
+    "mongodb": "~3.0.1",
+    "monk": "~6.0.5",
+    "morgan": "~1.9.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "^2.0.5",
+    "serve-favicon": "~2.4.5"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "webpack-cli": "^3.1.2"
+  }
 }

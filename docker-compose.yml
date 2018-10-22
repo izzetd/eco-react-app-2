@@ -1,0 +1,57 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    restart: always
+    build: .
+    command: npm install
+    command: npm run server
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:3.6.6
+    volumes:
+      - ./data:/data/db
+      - ./etc/mongo.conf:/etc/mongo.conf
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_DATABASE="nodetest1"
+      - MONGODB_USER="root"
+      - MONGODB_PASS="root"
+    command: mongod --config /etc/mongo.conf
+ 
+  zookeeper:
+    container_name: zookeeper
+    image: debezium/zookeeper:0.8
+    ports:
+      - "2181:2181"
+      - "2888:2888"
+      - "3888:3888"
+  kafka:
+    container_name: kafka
+    image: debezium/kafka:0.8
+    ports:
+      - "9092:9092"
+    links:
+      - zookeeper
+    environment:
+      - ZOOKEEPER_CONNECT=zookeeper:2181
+  connect:
+    container_name: connect
+    image: debezium/connect:0.8
+    ports:
+      - "8083:8083"
+    links:
+      - zookeeper
+      - kafka
+      - mongo
+    environment:
+      - GROUP_ID=1
+      - BOOTSTRAP_SERVERS=kafka:9092
+      - CONFIG_STORAGE_TOPIC=my_connect_configs
+      - OFFSET_STORAGE_TOPIC=my_connect_offsets 
+
