@@ -49,6 +49,4 @@ Izzet Demir
 * webpack.config.js - WebPack Bundle Konfiguration. Die Settings sind vordefiniert und brauchen nicht mehr angepasst zu werden. 
 * docker-compose.yml
 
-
-
 # eco-react-app-2
