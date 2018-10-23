@@ -1,4 +1,4 @@
-# The Dead-Simple Step-by-Step Guide for Front-End Developers to Getting Up and Running with Node.JS, Express, Jade, and MongoDB
+# The Dead-Simple Step-by-Step Guide for Front-End Developers to Getting Up and Running with Node.JS, Express, React, and MongoDB
 
 A tutorial and complete sample project for Front-End developers showing how to get Node, Express and Jade up and running, connected to MongoDB, and reading from / writing to the database.
 
@@ -24,3 +24,4 @@ Christopher Buecheler is a web developer who runs [CloseBrace](https://closebrac
 * README.md - this file
 * app.js - central app file for tutorial project
 * package.json - package info for tutorial project
+# eco-react-app-2
