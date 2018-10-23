@@ -1,27 +1,54 @@
-# The Dead-Simple Step-by-Step Guide for Front-End Developers to Getting Up and Running with Node.JS, Express, React, and MongoDB
 
-A tutorial and complete sample project for Front-End developers showing how to get Node, Express and Jade up and running, connected to MongoDB, and reading from / writing to the database.
-
-*New: Updated for 2018!*
 
 ## Quickstart
 
-[Visit the tutorial online](https://closebrace.com/tutorials/2017-03-02/the-dead-simple-step-by-step-guide-for-front-end-developers-to-getting-up-and-running-with-nodejs-express-and-mongodb). The rest of the project is provided just to show the functioning finished results. The tutorial will show you how to build all of this stuff, from downloading Node all the way to the end.
+### Setup Dependencies
 
-If you want to run this example code, you will need to do an NPM Install, as the node_modules directory has been removed from this repository. You'll also need to set up a MongoDB database. I highly recommend just going through the tutorial!
+npm install
+
+
+### Build React App
+
+npm run build_webpack
+
+
+### Run Application Server
+
+npm run server
 
 
 ## Author
 
-Christopher Buecheler is a web developer who runs [CloseBrace](https://closebrace.com), a site that provides tutorials and training for full-stack JavaScript developers. Previously he's worked for startups like GameSpy, OkCupid, Crispy Gamer, GoldenSpear, Volt Server, Tizra, and Datarista. You can visit him at [his website](http://cwbuecheler.com).
+Izzet Demir
 
 
 ## Contents
 
-* /public - static directories suchs as /images
-* /routes - route files for tutorial project
-* /views - views for tutorial project
-* README.md - this file
-* app.js - central app file for tutorial project
-* package.json - package info for tutorial project
+### Client
+* Enthält alle Resourcen für den Bau der React App 
+
+*   |_ src - Package für alle Javascript React Module
+
+*    |_ dist - Package für alle Build Artefakte, die Webpack generiert
+
+*    |_ templates - Package für alle statischen Templates, die für Webpack benötigt werden (z. B. Index.html für Single Page und übergreifende CSS)
+
+
+### Server
+
+*    |_ bin - Ausführungsordner für den Express Server
+
+*        |_ www - Ausführungsmodul für den Express Server
+
+*    |_ routes - Package für alle Route Module. Javascript Module enthalten Backend Geschäftslogik für API Calls
+
+*    |_ app.js - Application Modul
+
+* package.json
+* .babelrc - Babel Transpiler Settings für ES2016, ES2015 und React. Die Settings sind vordefiniert und brauchen nicht mehr angepasst zu werden. 
+* webpack.config.js - WebPack Bundle Konfiguration. Die Settings sind vordefiniert und brauchen nicht mehr angepasst zu werden. 
+* docker-compose.yml
+
+
+
 # eco-react-app-2
