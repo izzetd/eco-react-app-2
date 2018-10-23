@@ -25,7 +25,7 @@ Izzet Demir
 ## Contents
 
 ### Client
-* Enthält alle Resourcen für den Bau der React App 
+Enthält alle Resourcen für den Bau der React App 
 
 *   |_ src - Package für alle Javascript React Module
 
@@ -49,4 +49,3 @@ Izzet Demir
 * webpack.config.js - WebPack Bundle Konfiguration. Die Settings sind vordefiniert und brauchen nicht mehr angepasst zu werden. 
 * docker-compose.yml
 
-# eco-react-app-2
